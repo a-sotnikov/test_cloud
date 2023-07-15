@@ -1,0 +1,10 @@
+- name: Network Getting Started First Playbook
+  connection: ansible.netcommon.network_cli
+  gather_facts: true
+  hosts: localhost
+  tasks:
+
+    - name: Create check file
+      ansible.builtin.copy:
+        content: "{{ ansible_hostname }}"
+        dest: './hostname'
